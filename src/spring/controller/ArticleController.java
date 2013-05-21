@@ -24,7 +24,8 @@ public class ArticleController {
 
 	@Autowired
 	private ArticleService articleService;
-
+	
+	// To add new article
 	@RequestMapping(value = "/addArticle.html", method = RequestMethod.POST)
 	public @ResponseBody
 	String addUser(@ModelAttribute(value = "article") Article article,
@@ -39,7 +40,8 @@ public class ArticleController {
 		}
 		return returnText;
 	}
-
+	
+	// To search articles using name
 	@RequestMapping(value = "/searchArticle.html", method = RequestMethod.POST)
 	public @ResponseBody
 	String searchUser(Map<String, Object> map, HttpServletRequest request) {
@@ -68,7 +70,8 @@ public class ArticleController {
 
 		return returnText;
 	}
-
+	
+	// To display page addArticle.jsp
 	@RequestMapping(value = "/addArticle.html", method = RequestMethod.GET)
 	public ModelAndView addUser1(@ModelAttribute("article") Article article,
 			BindingResult result) {

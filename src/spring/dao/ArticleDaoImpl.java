@@ -34,7 +34,7 @@ public class ArticleDaoImpl implements ArticleDao {
 		return (List<Article>) sessionFactory.getCurrentSession().createCriteria(Article.class).list();
 	}
 
-
+	// To search articles using name
 	@SuppressWarnings("unchecked")
 	public List<Article> searchArticlesByKeyword(String keyword) {
 		Session session = sessionFactory.getCurrentSession();
